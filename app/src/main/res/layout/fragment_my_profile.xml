@@ -1,0 +1,113 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@color/colorStaffListBG"
+    tools:context="com.xeeshi.nsoft.MyProfileFragment">
+
+    <LinearLayout
+        android:id="@+id/mp_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="15dp"
+        tools:ignore="MissingPrefix">
+
+        <EditText
+            android:id="@+id/mp_edit_name"
+            style="@android:style/TextAppearance.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:textColor="@android:color/black"
+            fontPath="fonts/PT-Sans-Regular.ttf"/>
+
+        <TextView
+            android:id="@+id/mp_txt_dob"
+            style="@android:style/TextAppearance.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="5dp"
+            android:paddingStart="5dp"
+            android:paddingRight="5dp"
+            android:paddingEnd="5dp"
+            android:paddingBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/selector_my_profile_textview"
+            android:textColor="@android:color/black"
+            fontPath="fonts/PT-Sans-Regular.ttf"/>
+
+        <TextView
+            style="@android:style/TextAppearance.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/photo"
+            android:layout_marginTop="10dp"
+            fontPath="fonts/PT-Sans-Regular.ttf"/>
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/mp_img_profile"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/image_desc"
+            android:layout_marginTop="10dp"
+            android:src="@android:color/white"
+            fab:riv_corner_radius="15dp"
+            fab:riv_border_width="2dp"
+            fab:riv_border_color="@color/colorMyProfileImgStroke"
+            fab:riv_mutate_background="true"
+            fab:riv_tile_mode="clamp"
+            fab:riv_oval="false" />
+    </LinearLayout>
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/multiple_actions_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        fab:fab_addButtonColorNormal="@color/colorAccent"
+        fab:fab_addButtonColorPressed="@color/colorMyProfileMenuPressed"
+        fab:fab_addButtonSize="normal"
+        fab:fab_addButtonPlusIconColor="@android:color/white"
+        fab:fab_expandDirection="up"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/action_send_user_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_icon="@drawable/ic_cloud_upload_white_24dp"
+            fab:fab_size="mini"
+            fab:fab_colorNormal="@color/colorAccent"
+            fab:fab_colorPressed="@color/colorMyProfileMenuPressed"/>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/action_capture_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_icon="@drawable/ic_photo_camera_white_24dp"
+            fab:fab_size="mini"
+            fab:fab_colorNormal="@color/colorAccent"
+            fab:fab_colorPressed="@color/colorMyProfileMenuPressed"/>
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+
+
+
+
+
+
+
+</RelativeLayout>

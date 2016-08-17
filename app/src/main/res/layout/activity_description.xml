@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:padding="10dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginStart="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginEnd="20dp"
+    android:background="@drawable/box_round_description_page"
+    tools:ignore="MissingPrefix">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/ad_txt_name"
+        style="@android:style/TextAppearance.Large"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:text="Craig Welch"
+        android:textColor="@color/colorDescriptionName"
+        android:textStyle="bold"
+        fontPath="fonts/Roboto-Slab-Bold.ttf"/>
+
+        <ImageView
+            android:id="@+id/ad_img_close"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/image_desc"
+            android:src="@drawable/ic_highlight_off_black_24"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/ad_txt_description"
+        style="@android:style/TextAppearance.Small"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="vertical"
+        android:maxLines="15"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="5dp"
+        android:paddingStart="5dp"
+        android:paddingRight="10dp"
+        android:paddingEnd="10dp"
+        android:text="tse e dskflskd jflksdjf lksj dflksjlfkasjlkdfj sal;kfj lskafj lsjfd tse e dskflskd jflksdjf lksj dflksjlfkasjlkdfj sal;kfj lskafj lsjfd tse e dskflskd jflksdjf lksj dflksjlfkasjlkdfj sal;kfj lskafj lsjfd tse e dskflskd jflksdjf lksj dflksjlfkasjlkdfj sal;kfj lskafj lsjfd tse e dskflskd jflksdjf lksj dflksjlfkasjlkdfj sal;kfj lskafj lsjfd tse e dskflskd jflksdjf lksj dflksjlfkasjlkdfj sal;kfj lskafj lsjfd tse e dskflskd jflksdjf lksj dflksjlfkasjlkdfj sal;kfj lskafj lsjfd tse e dskflskd jflksdjf lksj dflksjlfkasjlkdfj sal;kfj lskafj lsjfd tse e dskflskd jflksdjf lksj dflksjlfkasjlkdfj sal;kfj lskafj lsjfd tse e dskflskd jflksdjf lksj dflksjlfkasjlkdfj sal;kfj lskafj lsjfd tse e dskflskd jflksdjf lksj dflksjlfkasjlkdfj sal;kfj lskafj lsjfd tse e dskflskd jflksdjf lksj dflksjlfkasjlkdfj sal;kfj lskafj lsjfd tse e dskflskd jflksdjf lksj dflksjlfkasjlkdfj sal;kfj lskafj lsjfd"
+        android:textColor="@android:color/black"
+        android:textStyle="normal"
+        fontPath="fonts/PT-Sans-Regular.ttf"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/ad_txt_send_email"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/send_email"
+            android:textColor="@color/colorDescriptionButton"
+            fontPath="fonts/PT-Sans-Regular.ttf"/>
+
+        <TextView
+            android:id="@+id/ad_txt_set_notificaiton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/set_notification"
+            android:textColor="@color/colorDescriptionButton"
+            fontPath="fonts/PT-Sans-Regular.ttf"/>
+
+        <TextView
+            android:id="@+id/ad_txt_show_map"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/show_on_map"
+            android:textColor="@color/colorDescriptionButton"
+            fontPath="fonts/PT-Sans-Regular.ttf"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,7 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <item name="ic_content_paste" type="drawable">@drawable/ic_content_paste</item>
+    <item name="ic_person" type="drawable">@drawable/ic_person</item>
+    <item name="ic_stars" type="drawable">@drawable/ic_stars</item>
+    <item name="ic_settings" type="drawable">@drawable/ic_settings</item>
+    <item name="ic_delete" type="drawable">@drawable/ic_delete</item>
+</resources>

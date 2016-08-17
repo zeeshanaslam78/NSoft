@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="navigation_drawer_open">Otvorite panel za navigaciju</string>
+    <string name="navigation_drawer_close">Zatvori panel za navigaciju</string>
+
+    <string name="title_activity_maps">karta</string>
+
+    <string name="staff_list">Lista osoblje</string>
+    <string name="my_profile">Moj profil</string>
+    <string name="favorites">Favoriti</string>
+    <string name="settings">Postavke</string>
+    <string name="system_options">Sistemska podešavanja</string>
+    <string name="clear_cache">Pobriši cache</string>
+
+    <string name="send_email">POŠALJITE E-MAIL</string>
+    <string name="set_notification">SET OBAVIJEST</string>
+    <string name="show_on_map">Prikaži na karti</string>
+
+    <string name="choose_language">Izaberite jezik</string>
+    <string name="save_changes">SAČUVAJ PROMJENE</string>
+
+    <string name="please_enter_name">Unesite ime</string>
+    <string name="please_enter_dob">Molimo izaberite datum rođenja</string>
+    <string name="photo">fotografija</string>
+    <string name="profile_updated_successfully">Profil Ažurirano Uspješno</string>
+
+    <string name="removed_from_favorite">Ukloni iz Omiljeno</string>
+    <string name="added_to_favorite">Dodano u omiljene</string>
+    <string name="already_added_to_favorite">Već Dodano u omiljene</string>
+</resources>

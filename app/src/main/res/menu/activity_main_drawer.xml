@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_staff_list"
+            android:icon="@drawable/ic_content_paste"
+            android:title="@string/staff_list" />
+        <item
+            android:id="@+id/nav_my_profile"
+            android:icon="@drawable/ic_person"
+            android:title="@string/my_profile" />
+        <item
+            android:id="@+id/nav_favorites"
+            android:icon="@drawable/ic_stars"
+            android:title="@string/favorites" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/settings" />
+    </group>
+
+    <item android:title="@string/system_options">
+        <menu>
+            <item
+                android:id="@+id/nav_clear_cache"
+                android:icon="@drawable/ic_delete"
+                android:title="@string/clear_cache" />
+        </menu>
+    </item>
+
+</menu>

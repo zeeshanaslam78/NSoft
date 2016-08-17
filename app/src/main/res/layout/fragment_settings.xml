@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@color/colorStaffListBG"
+    tools:ignore="MissingPrefix"
+    tools:context="com.xeeshi.nsoft.MyProfileFragment">
+
+    <TextView
+        android:id="@+id/fs_choose_lang"
+        style="@android:style/TextAppearance.Medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/choose_language"
+        android:textColor="@color/colorAccent"
+        android:layout_marginTop="10dp"
+        fontPath="fonts/PT-Sans-Regular.ttf"/>
+
+    <Spinner
+        android:id="@+id/fs_spinner_language"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/fs_choose_lang" />
+
+
+    <TextView
+        android:id="@+id/fs_txt_save_settings"
+        style="@android:style/TextAppearance.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:padding="10dp"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:text="@string/save_changes"
+        android:textColor="@color/colorAccent"
+        android:layout_marginTop="10dp"
+        fontPath="fonts/PT-Sans-Regular.ttf"/>
+
+
+</RelativeLayout>

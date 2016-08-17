@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>-->
+
+    <color name="colorPrimary">#1869A7</color>
+    <color name="colorPrimaryDark">#145A8F</color>
+    <color name="colorAccent">#E86F2C</color>
+
+    <color name="colorStaffListItemGrey">#727272</color>
+    <color name="colorStaffListItemRed">#F1453D</color>
+    <color name="colorStaffListItemGreen">#50AE55</color>
+    <color name="colorStaffListItemBGWhite">#FAFAFA</color>
+    <color name="colorStaffListShadowGrey">#BCBCBC</color>
+    <color name="colorStaffListBG">#EEEEEE</color>
+
+    <color name="colorDescriptionPageBG">#C7D5DE</color>
+    <color name="colorDescriptionButton">#145A8F</color>
+    <color name="colorDescriptionName">#5B6266</color>
+
+    <color name="colorMyProfileHeading">#6D6D6D</color>
+    <color name="colorMyProfileImgStroke">#CC5318</color>
+
+    <color name="colorMyProfileMenuPressed">#CE6117</color>
+
+</resources>
