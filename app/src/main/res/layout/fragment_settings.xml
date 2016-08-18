@@ -13,8 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
+        android:layout_alignParentTop="true"
         android:text="@string/choose_language"
-        android:textColor="@color/colorAccent"
+        android:textColor="?attr/colorAccent"
         android:layout_marginTop="10dp"
         fontPath="fonts/PT-Sans-Regular.ttf"/>
 
@@ -25,6 +26,44 @@
         android:layout_margin="10dp"
         android:layout_below="@+id/fs_choose_lang" />
 
+
+    <TextView
+        android:id="@+id/fs_choose_theme"
+        style="@android:style/TextAppearance.Medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_below="@+id/fs_spinner_language"
+        android:text="@string/choose_theme"
+        android:textColor="?attr/colorAccent"
+        android:layout_marginTop="10dp"
+        fontPath="fonts/PT-Sans-Regular.ttf"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_below="@+id/fs_choose_theme">
+
+        <View
+            android:id="@+id/fs_view_blue"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@color/colorPrimaryBlue"/>
+
+        <View
+            android:id="@+id/fs_view_purple"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginStart="40dp"
+            android:background="@color/colorPrimaryPurple"/>
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/fs_txt_save_settings"
@@ -40,7 +79,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:text="@string/save_changes"
-        android:textColor="@color/colorAccent"
+        android:textColor="?attr/colorAccent"
         android:layout_marginTop="10dp"
         fontPath="fonts/PT-Sans-Regular.ttf"/>
 

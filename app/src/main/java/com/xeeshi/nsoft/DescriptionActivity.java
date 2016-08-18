@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
@@ -16,12 +17,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.xeeshi.nsoft.Objects.User;
+import com.xeeshi.nsoft.Utils.Common;
 import com.xeeshi.nsoft.Utils.Constants;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
+
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**
  * Created by ZEESHAN on 14/08/16.
@@ -32,6 +36,9 @@ public class DescriptionActivity extends Activity implements View.OnClickListene
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        Common.setSelectedThemeForDescriptoin(DescriptionActivity.this);
+
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_description);
@@ -127,6 +134,10 @@ public class DescriptionActivity extends Activity implements View.OnClickListene
         }
     }
 
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
 
     @Override
     public void onBackPressed() {

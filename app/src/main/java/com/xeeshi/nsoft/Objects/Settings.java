@@ -17,12 +17,23 @@ public class Settings extends Model {
     @Column(name = "locale")
     private String locale;
 
+    @Column(name = "theme")
+    private String theme;
+
     public String getLocale() {
         return locale;
     }
 
     public void setLocale(String locale) {
         this.locale = locale;
+    }
+
+    public String getTheme() {
+        return theme;
+    }
+
+    public void setTheme(String theme) {
+        this.theme = theme;
     }
 
     public static Settings getSingleItem() {
@@ -41,6 +52,8 @@ public class Settings extends Model {
     public String toString() {
         return "Settings{" +
                 "locale='" + locale + '\'' +
+                ", theme='" + theme + '\'' +
                 '}';
     }
+
 }

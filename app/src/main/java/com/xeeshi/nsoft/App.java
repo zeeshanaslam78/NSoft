@@ -117,6 +117,7 @@ public class App extends MultiDexApplication {
         if (null == settings) {
             Settings settings1 = new Settings();
             settings1.setLocale("en");
+            settings1.setTheme("Blue");
             settings1.save();
 
             Common.SetLocale(this.getBaseContext(), null, "en", false);
@@ -125,6 +126,15 @@ public class App extends MultiDexApplication {
                 Common.SetLocale(this.getBaseContext(), null, settings.getLocale() , false);
             else
                 Common.SetLocale(this.getBaseContext(), null, "en", false);
+
+            if (null!=settings.getTheme() && settings.getTheme().length()>0){
+                if (settings.getTheme().equals("Blue"))
+                    setTheme(R.style.Blue_Theme_NoActionBar);
+                else
+                    setTheme(R.style.Purple_Theme_NoActionBar);
+            } else
+                setTheme(R.style.Blue_Theme_NoActionBar);
+
         }
     }
 

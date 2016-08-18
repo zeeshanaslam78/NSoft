@@ -1,7 +1,9 @@
 package com.xeeshi.nsoft;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.content.IntentCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +28,7 @@ public class SettingsFragment extends Fragment {
     public static final String TAG = SettingsFragment.class.getSimpleName();
 
     private String language = "English";
+    private String theme = "Blue";
 
     public SettingsFragment() {
         // Required empty public constructor
@@ -63,6 +66,9 @@ public class SettingsFragment extends Fragment {
         TextView fs_txt_save_settings = (TextView) getActivity().findViewById(R.id.fs_txt_save_settings);
         Spinner fs_spinner_language = (Spinner) getActivity().findViewById(R.id.fs_spinner_language);
 
+        final View fs_view_blue = getActivity().findViewById(R.id.fs_view_blue);
+        final View fs_view_purple = getActivity().findViewById(R.id.fs_view_purple);
+
         List<String> languageList = new ArrayList<>();
         languageList.add("English");
         languageList.add("BHS");
@@ -82,14 +88,70 @@ public class SettingsFragment extends Fragment {
             }
         });
 
+        fs_view_blue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Settings settings = Settings.getSingleItem();
+                Settings.deleteAllRecords();
+
+                Settings settings1 = new Settings();
+                settings1.setLocale(settings.getLocale());
+                settings1.setTheme("Blue");
+                settings1.save();
+
+
+                getActivity().finish();
+                final Intent intent = getActivity().getIntent();
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
+                getActivity().startActivity(intent);
+
+                /*fs_view_blue.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+
+                    }
+                }, 1000);*/
+            }
+        });
+
+        fs_view_purple.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Settings settings = Settings.getSingleItem();
+                Settings.deleteAllRecords();
+
+                Settings settings1 = new Settings();
+                settings1.setLocale(settings.getLocale());
+                settings1.setTheme("Purple");
+                settings1.save();
+
+                getActivity().finish();
+                final Intent intent = getActivity().getIntent();
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
+                getActivity().startActivity(intent);
+
+                /*fs_view_purple.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+
+                    }
+                }, 1000);*/
+
+            }
+        });
+
+
 
         fs_txt_save_settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                Settings settings1 = Settings.getSingleItem();
                 Settings.deleteAllRecords();
                 Settings settings = new Settings();
-
+                settings.setTheme(settings1.getTheme());
                 if (language.equals("BHS")) {
                     settings.setLocale("bs");
                     settings.save();
@@ -101,6 +163,7 @@ public class SettingsFragment extends Fragment {
 
                     Common.SetLocale(getActivity().getBaseContext(), getActivity(), "en", true);
                 }
+
             }
         });
 

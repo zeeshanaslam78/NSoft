@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--<color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>-->
-
-    <color name="colorPrimary">#1869A7</color>
-    <color name="colorPrimaryDark">#145A8F</color>
-    <color name="colorAccent">#E86F2C</color>
 
     <color name="colorStaffListItemGrey">#727272</color>
     <color name="colorStaffListItemRed">#F1453D</color>
@@ -15,13 +8,38 @@
     <color name="colorStaffListShadowGrey">#BCBCBC</color>
     <color name="colorStaffListBG">#EEEEEE</color>
 
-    <color name="colorDescriptionPageBG">#C7D5DE</color>
-    <color name="colorDescriptionButton">#145A8F</color>
     <color name="colorDescriptionName">#5B6266</color>
+    <color name="colorDescriptionScrollbarColor">#9BA2A7</color>
 
     <color name="colorMyProfileHeading">#6D6D6D</color>
-    <color name="colorMyProfileImgStroke">#CC5318</color>
 
-    <color name="colorMyProfileMenuPressed">#CE6117</color>
+
+
+    <!-- Blue Theme Colors -->
+    <color name="colorPrimaryBlue">#1869A7</color>
+    <color name="colorPrimaryDarkBlue">#145A8F</color>
+    <color name="colorAccent">#E86F2C</color>
+
+    <color name="colorDescriptionPageBGBlue">#C7D5DE</color>
+
+    <color name="colorMyProfileImgStrokeBlue">#CC5318</color>
+    <color name="colorMyProfileMenuPressedBlue">#CE6117</color>
+
+    <color name="navSelectedColorBlue">#D1D1D1</color>
+    <!-- Blue Theme Colors -->
+
+
+    <!-- Purple Theme Color -->
+    <color name="colorPrimaryPurple">#9B26AF</color>
+    <color name="colorPrimaryDarkPurple">#691A99</color>
+    <color name="colorAccentPurple">#68EFAD</color>
+
+    <color name="colorDescriptionPageBGPurple">#E1BDE7</color>
+
+    <color name="colorMyProfileImgStrokePurple">#4CD399</color>
+    <color name="colorMyProfileMenuPressedPurple">#4EE198</color>
+
+    <color name="navSelectedColorPurple">#F0F4C3</color>
+    <!-- Purple Theme Color -->
 
 </resources>

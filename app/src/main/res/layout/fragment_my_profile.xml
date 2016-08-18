@@ -20,6 +20,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
+            android:padding="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="?attr/selectorMyProfileTextView"
             android:textColor="@android:color/black"
             fontPath="fonts/PT-Sans-Regular.ttf"/>
 
@@ -29,16 +35,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:paddingLeft="5dp"
-            android:paddingStart="5dp"
-            android:paddingRight="5dp"
-            android:paddingEnd="5dp"
-            android:paddingBottom="5dp"
+            android:padding="10dp"
             android:layout_marginLeft="5dp"
             android:layout_marginStart="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginEnd="5dp"
-            android:background="@drawable/selector_my_profile_textview"
+            android:background="?attr/selectorMyProfileTextView"
             android:textColor="@android:color/black"
             fontPath="fonts/PT-Sans-Regular.ttf"/>
 
@@ -61,7 +63,7 @@
             android:src="@android:color/white"
             fab:riv_corner_radius="15dp"
             fab:riv_border_width="2dp"
-            fab:riv_border_color="@color/colorMyProfileImgStroke"
+            fab:riv_border_color="?attr/colorMyProfileImgStroke"
             fab:riv_mutate_background="true"
             fab:riv_tile_mode="clamp"
             fab:riv_oval="false" />
@@ -74,8 +76,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        fab:fab_addButtonColorNormal="@color/colorAccent"
-        fab:fab_addButtonColorPressed="@color/colorMyProfileMenuPressed"
+        fab:fab_addButtonColorNormal="?attr/colorAccent"
+        fab:fab_addButtonColorPressed="?attr/colorMyProfileMenuPressed"
         fab:fab_addButtonSize="normal"
         fab:fab_addButtonPlusIconColor="@android:color/white"
         fab:fab_expandDirection="up"
@@ -87,19 +89,19 @@
             android:id="@+id/action_send_user_data"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            fab:fab_icon="@drawable/ic_cloud_upload_white_24dp"
+            fab:fab_icon="?attr/icCloudUpload"
             fab:fab_size="mini"
-            fab:fab_colorNormal="@color/colorAccent"
-            fab:fab_colorPressed="@color/colorMyProfileMenuPressed"/>
+            fab:fab_colorNormal="?attr/colorAccent"
+            fab:fab_colorPressed="?attr/colorMyProfileMenuPressed"/>
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/action_capture_photo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            fab:fab_icon="@drawable/ic_photo_camera_white_24dp"
+            fab:fab_icon="?attr/icPhotoCamera"
             fab:fab_size="mini"
-            fab:fab_colorNormal="@color/colorAccent"
-            fab:fab_colorPressed="@color/colorMyProfileMenuPressed"/>
+            fab:fab_colorNormal="?attr/colorAccent"
+            fab:fab_colorPressed="?attr/colorMyProfileMenuPressed"/>
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 

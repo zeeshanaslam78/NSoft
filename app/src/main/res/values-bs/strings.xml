@@ -27,4 +27,5 @@
     <string name="removed_from_favorite">Ukloni iz Omiljeno</string>
     <string name="added_to_favorite">Dodano u omiljene</string>
     <string name="already_added_to_favorite">Već Dodano u omiljene</string>
+    <string name="choose_theme">Choose theme</string>
 </resources>

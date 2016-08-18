@@ -65,6 +65,9 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        Common.setSelectedTheme(MainActivity.this);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -105,6 +108,7 @@ public class MainActivity extends AppCompatActivity
 
         GetDataLocallyAndUpdateUI();
     }
+
 
 
     @Override

@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 import com.xeeshi.nsoft.MainActivity;
+import com.xeeshi.nsoft.Objects.Settings;
+import com.xeeshi.nsoft.R;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -128,6 +130,36 @@ public class Common {
 
         // The directory is now empty so delete it
         return dir.delete();
+    }
+
+
+    public static void setSelectedTheme(Context context) {
+        Settings settings = Settings.getSingleItem();
+        if (null!=settings) {
+            if (null!=settings.getTheme() && settings.getTheme().length()>0) {
+                if (settings.getTheme().equals("Blue"))
+                    context.setTheme(R.style.Blue_Theme_NoActionBar);
+                if (settings.getTheme().equals("Purple"))
+                    context.setTheme(R.style.Purple_Theme_NoActionBar);
+            } else
+                context.setTheme(R.style.Blue_Theme_NoActionBar);
+        } else
+            context.setTheme(R.style.Blue_Theme_NoActionBar);
+    }
+
+
+    public static void setSelectedThemeForDescriptoin(Context context) {
+        Settings settings = Settings.getSingleItem();
+        if (null!=settings) {
+            if (null!=settings.getTheme() && settings.getTheme().length()>0) {
+                if (settings.getTheme().equals("Blue"))
+                    context.setTheme(R.style.TransparentActivity_Blue);
+                if (settings.getTheme().equals("Purple"))
+                    context.setTheme(R.style.TransparentActivity_Purple);
+            } else
+                context.setTheme(R.style.TransparentActivity_Blue);
+        } else
+            context.setTheme(R.style.TransparentActivity_Blue);
     }
 
 }

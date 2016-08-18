@@ -1,33 +1,109 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar" />
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="AppTheme.Blue" parent="AppTheme">
+        <item name="colorPrimary">@color/colorPrimaryBlue</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkBlue</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="sideNavBar">@drawable/side_nav_bar_blue</item>
+        <item name="drawerItemTextSelector">@color/drawer_item_text_selector_blue</item>
+        <item name="drawerItemIconSelector">@color/drawer_item_icon_selector_blue</item>
+        <item name="drawerItemBgSelector">@drawable/drawer_item_bg_selector_blue</item>
+
+        <item name="selectorMyProfileTextView">@drawable/selector_my_profile_textview_blue</item>
+
+        <item name="colorMyProfileImgStroke">@color/colorMyProfileImgStrokeBlue</item>
+        <item name="colorMyProfileMenuPressed">@color/colorMyProfileMenuPressedBlue</item>
+
+        <item name="colorRoundDescriptionPage">@drawable/box_round_description_page_blue</item>
+
+        <item name="icPhotoCamera">@drawable/ic_photo_camera_white_24dp</item>
+        <item name="icCloudUpload">@drawable/ic_cloud_upload_white_24dp</item>
     </style>
 
-    <style name="AppTheme.NoActionBar">
+
+    <style name="AppTheme.Purple" parent="AppTheme">
+        <item name="colorPrimary">@color/colorPrimaryPurple</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkPurple</item>
+        <item name="colorAccent">@color/colorAccentPurple</item>
+
+        <item name="sideNavBar">@drawable/side_nav_bar_purple</item>
+        <item name="drawerItemTextSelector">@color/drawer_item_text_selector_purple</item>
+        <item name="drawerItemIconSelector">@color/drawer_item_icon_selector_purple</item>
+        <item name="drawerItemBgSelector">@drawable/drawer_item_bg_selector_purple</item>
+
+        <item name="selectorMyProfileTextView">@drawable/selector_my_profile_textview_purple</item>
+
+        <item name="colorMyProfileImgStroke">@color/colorMyProfileImgStrokePurple</item>
+        <item name="colorMyProfileMenuPressed">@color/colorMyProfileMenuPressedPurple</item>
+
+        <item name="colorRoundDescriptionPage">@drawable/box_round_description_page_purple</item>
+
+        <item name="icPhotoCamera">@drawable/ic_photo_camera_green_24dp</item>
+        <item name="icCloudUpload">@drawable/ic_cloud_upload_green_24dp</item>
+    </style>
+
+
+    <style name="Blue.Theme" parent="AppTheme.Blue" />
+    <style name="Purple.Theme" parent="AppTheme.Purple" />
+
+    <style name="Blue.Theme.NoActionBar" parent="Blue.Theme" >
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Purple.Theme.NoActionBar" parent="Purple.Theme" >
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
-    <!-- Style for activity to show like dialog -->
-    <style name="TransparentActivity" parent="android:Theme.Holo.Light">
+
+    <style name="Transparent.Blue" parent="android:Theme">
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="colorRoundDescriptionPage">@drawable/box_round_description_page_blue</item>
+        <item name="colorDesctiption">@color/colorPrimaryDarkBlue</item>
+
     </style>
 
+    <style name="Transparent.Purple" parent="android:Theme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="colorRoundDescriptionPage">@drawable/box_round_description_page_purple</item>
+        <item name="colorDesctiption">@color/colorPrimaryDarkPurple</item>
+    </style>
+
+    <style name="TransparentActivity.Blue" parent="Transparent.Blue" />
+    <style name="TransparentActivity.Purple" parent="Transparent.Purple" />
 
 
+
+    <attr name="sideNavBar" format="reference" />
+    <attr name="drawerItemTextSelector" format="color" />
+    <attr name="drawerItemIconSelector" format="color" />
+    <attr name="selectorMyProfileTextView" format="reference" />
+    <attr name="colorMyProfileImgStroke" format="color" />
+    <attr name="colorMyProfileMenuPressed" format="color" />
+    <attr name="colorRoundDescriptionPage" format="reference" />
+    <attr name="icPhotoCamera" format="reference" />
+    <attr name="icCloudUpload" format="reference" />
+    <attr name="colorDesctiption" format="color" />
+    <attr name="drawerItemBgSelector" format="reference" />
 
 </resources>

@@ -1,9 +1,40 @@
 <resources>
 
-    <style name="AppTheme.NoActionBar">
+    <style name="Blue.Theme.NoActionBar" parent="Blue.Theme" >
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDarkBlue</item>
+    </style>
+
+    <style name="Green.Theme.NoActionBar" parent="Purple.Theme" >
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
+
+
+    <style name="Blue.Theme" parent="AppTheme.Blue" >
+        <item name="android:navigationBarColor">@color/colorPrimaryBlue</item>
+    </style>
+
+    <style name="Purple.Theme" parent="AppTheme.Purple" >
+        <item name="android:navigationBarColor">@color/colorPrimaryPurple</item>
+    </style>
+
+
+
+    <style name="TransparentActivity.Blue" parent="Transparent.Blue" >
+        <item name="android:navigationBarColor">@color/colorPrimaryDarkBlue</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="TransparentActivity.Purple" parent="Transparent.Purple" >
+        <item name="android:navigationBarColor">@color/colorPrimaryDarkPurple</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
 </resources>
