@@ -116,24 +116,24 @@ public class App extends MultiDexApplication {
         Settings settings = Settings.getSingleItem();
         if (null == settings) {
             Settings settings1 = new Settings();
-            settings1.setLocale("en");
+            settings1.setLocale("English");
             settings1.setTheme("Blue");
+            settings1.setFontSize("Medium");
             settings1.save();
 
-            Common.SetLocale(this.getBaseContext(), null, "en", false);
+            Common.SetLocale(this.getBaseContext(), null, "English", false);
         } else {
             if (null!=settings.getLocale() && settings.getLocale().length()>0)
                 Common.SetLocale(this.getBaseContext(), null, settings.getLocale() , false);
             else
-                Common.SetLocale(this.getBaseContext(), null, "en", false);
+                Common.SetLocale(this.getBaseContext(), null, "English", false);
 
-            if (null!=settings.getTheme() && settings.getTheme().length()>0){
-                if (settings.getTheme().equals("Blue"))
-                    setTheme(R.style.Blue_Theme_NoActionBar);
-                else
-                    setTheme(R.style.Purple_Theme_NoActionBar);
-            } else
-                setTheme(R.style.Blue_Theme_NoActionBar);
+            int themeStyleId = R.style.Blue_Theme_NoActionBar;
+            if (null!=settings.getTheme() && settings.getTheme().length()>0) {
+                if (settings.getTheme().equals("Purple"))
+                    themeStyleId = R.style.Purple_Theme_NoActionBar;
+            }
+            setTheme(themeStyleId);
 
         }
     }

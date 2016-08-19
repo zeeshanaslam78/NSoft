@@ -6,6 +6,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.xeeshi.nsoft.Objects.Settings;
 import com.xeeshi.nsoft.Objects.User;
 import com.xeeshi.nsoft.Utils.Common;
 import com.xeeshi.nsoft.Utils.Constants;
@@ -38,13 +40,11 @@ public class DescriptionActivity extends Activity implements View.OnClickListene
     protected void onCreate(Bundle savedInstanceState) {
 
         Common.setSelectedThemeForDescriptoin(DescriptionActivity.this);
-
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_description);
 
         TextView ad_txt_name, ad_txt_description, ad_txt_send_email, ad_txt_set_notificaiton, ad_txt_show_map;
-
         ImageView ad_img_close = (ImageView) findViewById(R.id.ad_img_close);
 
         ad_txt_name = (TextView) findViewById(R.id.ad_txt_name);
@@ -144,4 +144,21 @@ public class DescriptionActivity extends Activity implements View.OnClickListene
         super.onBackPressed();
         overridePendingTransition(0, R.anim.slide_out_up);
     }
+
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        Settings settings = Settings.getSingleItem();
+        if (null!=settings ) {
+            if (null!=settings.getLocale() && settings.getLocale().length()>0)
+                Common.SetLocale(DescriptionActivity.this, null, settings.getLocale() , false);
+            else
+                Common.SetLocale(DescriptionActivity.this, null, "English", false);
+        } else
+            Common.SetLocale(DescriptionActivity.this, null, "English", false);
+    }
+
+
 }

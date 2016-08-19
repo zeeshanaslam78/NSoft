@@ -1,10 +1,14 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
+    android:fillViewport="true"
     android:background="@color/colorStaffListBG"
-    tools:ignore="MissingPrefix"
-    tools:context="com.xeeshi.nsoft.MyProfileFragment">
+    tools:context="com.xeeshi.nsoft.SettingsFragment">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="MissingPrefix">
 
     <TextView
         android:id="@+id/fs_choose_lang"
@@ -40,30 +44,40 @@
         android:layout_marginTop="10dp"
         fontPath="fonts/PT-Sans-Regular.ttf"/>
 
-    <LinearLayout
+
+    <Spinner
+        android:id="@+id/fs_spinner_theme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/fs_choose_theme" />
+
+
+    <TextView
+        android:id="@+id/fs_choose_font_size"
+        style="@android:style/TextAppearance.Medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_below="@+id/fs_spinner_theme"
+        android:text="@string/choose_font_size"
+        android:textColor="?attr/colorAccent"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_below="@+id/fs_choose_theme">
+        fontPath="fonts/PT-Sans-Regular.ttf"/>
 
-        <View
-            android:id="@+id/fs_view_blue"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:background="@color/colorPrimaryBlue"/>
+    <Spinner
+        android:id="@+id/fs_spinner_font_size"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/fs_choose_font_size" />
 
-        <View
-            android:id="@+id/fs_view_purple"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginStart="40dp"
-            android:background="@color/colorPrimaryPurple"/>
-
-    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/fs_spinner_font_size"
+        android:background="@android:color/transparent" />
 
     <TextView
         android:id="@+id/fs_txt_save_settings"
@@ -83,5 +97,5 @@
         android:layout_marginTop="10dp"
         fontPath="fonts/PT-Sans-Regular.ttf"/>
 
-
 </RelativeLayout>
+</ScrollView>

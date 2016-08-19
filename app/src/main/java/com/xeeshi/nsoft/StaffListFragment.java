@@ -10,10 +10,12 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.xeeshi.nsoft.Adapter.StaffListAdapter;
 import com.xeeshi.nsoft.ConsumeAPIs.GetStaffDataManager;
 import com.xeeshi.nsoft.Objects.User;
+import com.xeeshi.nsoft.Utils.Common;
 import com.xeeshi.nsoft.Utils.Constants;
 
 import java.util.List;
@@ -55,29 +57,34 @@ public class StaffListFragment extends ListFragment {
         listView.setVisibility(View.GONE);
         progressBar.setVisibility(View.VISIBLE);
 
-        GetStaffDataManager staffDataManager = new GetStaffDataManager();
-        staffDataManager.callGetStaffDataService().GetStaffListData().enqueue(new Callback<List<User>>() {
-            @Override
-            public void onResponse(Call<List<User>> call, Response<List<User>> response) {
-                if (response.isSuccessful()) {
 
-                    if (null!=getActivity()) {
-                        List<User> userList = response.body();
+        if (Common.isNetworkAvailable(getActivity())) {
+            GetStaffDataManager staffDataManager = new GetStaffDataManager();
+            staffDataManager.callGetStaffDataService().GetStaffListData().enqueue(new Callback<List<User>>() {
+                @Override
+                public void onResponse(Call<List<User>> call, Response<List<User>> response) {
+                    if (response.isSuccessful()) {
 
-                        StaffListAdapter adapter = new StaffListAdapter(getActivity(), userList, false, getFragmentManager());
-                        listView.setAdapter(adapter);
+                        if (null != getActivity()) {
+                            List<User> userList = response.body();
 
-                        listView.setVisibility(View.VISIBLE);
-                        progressBar.setVisibility(View.GONE);
+                            StaffListAdapter adapter = new StaffListAdapter(getActivity(), userList, false, getFragmentManager());
+                            listView.setAdapter(adapter);
+
+                            listView.setVisibility(View.VISIBLE);
+                            progressBar.setVisibility(View.GONE);
+                        }
                     }
                 }
-            }
 
-            @Override
-            public void onFailure(Call<List<User>> call, Throwable t) {
+                @Override
+                public void onFailure(Call<List<User>> call, Throwable t) {
 
-            }
-        });
+                }
+            });
+        } else {
+            Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.network_not_available), Toast.LENGTH_LONG).show();
+        }
 
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

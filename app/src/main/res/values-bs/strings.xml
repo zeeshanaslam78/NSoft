@@ -27,5 +27,9 @@
     <string name="removed_from_favorite">Ukloni iz Omiljeno</string>
     <string name="added_to_favorite">Dodano u omiljene</string>
     <string name="already_added_to_favorite">Već Dodano u omiljene</string>
-    <string name="choose_theme">Choose theme</string>
+
+    <string name="choose_theme">Odaberite temu</string>
+    <string name="choose_font_size">Odaberite veličinu slova</string>
+
+    <string name="network_not_available">Mreža je nedostupna</string>
 </resources>

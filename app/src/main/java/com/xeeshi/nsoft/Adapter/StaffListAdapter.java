@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ import com.xeeshi.nsoft.Objects.Map;
 import com.xeeshi.nsoft.Objects.Progress;
 import com.xeeshi.nsoft.Objects.User;
 import com.xeeshi.nsoft.R;
+import com.xeeshi.nsoft.Utils.Common;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -98,6 +100,9 @@ public class StaffListAdapter extends BaseAdapter {
             holder = new Holder();
             convertView =  layoutInflater.inflate(R.layout.staff_list_item, viewGroup, false);
 
+
+            holder.sli_ll = (LinearLayout) convertView.findViewById(R.id.sli_ll);
+
             holder.sl_txt_name = (TextView) convertView.findViewById(R.id.sl_txt_name);
             holder.sl_txt_email = (TextView) convertView.findViewById(R.id.sl_txt_email);
             holder.sl_txt_location = (TextView) convertView.findViewById(R.id.sl_txt_location);
@@ -122,6 +127,18 @@ public class StaffListAdapter extends BaseAdapter {
             holder.sl_img_payment.setVisibility(View.GONE);
         }
 
+        // setting elevation pre lolipop
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            holder.sli_ll.setBackgroundResource(R.drawable.shadow_list_item);
+            holder.sli_ll.setPadding(Common.convertPaddingToPixel(20, _Context),
+                    Common.convertPaddingToPixel(20, _Context),
+                    Common.convertPaddingToPixel(20, _Context),
+                    Common.convertPaddingToPixel(20, _Context));
+
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            params.setMargins(0, 0, 0, 0);
+            holder.sli_ll.setLayoutParams(params);
+        }
 
         final User user = getItem(position);
 
@@ -300,7 +317,7 @@ public class StaffListAdapter extends BaseAdapter {
     private static class Holder {
         TextView sl_txt_name, sl_txt_email, sl_txt_location, sl_txt_dob, sl_txt_job, sl_txt_salary;
         ImageView sl_img_photo, sl_img_fav, sl_img_payment;
+        LinearLayout sli_ll;
     }
-
 
 }

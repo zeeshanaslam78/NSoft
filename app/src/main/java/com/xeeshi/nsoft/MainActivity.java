@@ -2,6 +2,7 @@ package com.xeeshi.nsoft;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -20,6 +21,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.ImageSize;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
 import com.xeeshi.nsoft.Objects.Data;
+import com.xeeshi.nsoft.Objects.Settings;
 import com.xeeshi.nsoft.Objects.User;
 import com.xeeshi.nsoft.Utils.Common;
 
@@ -264,5 +266,22 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void updateProfileData(Data data) {
         UpdateNavHeaderUI(data);
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        if (BuildConfig.DEBUG)
+            Log.d(TAG, "onConfigurationChanged: ");
+
+        Settings settings = Settings.getSingleItem();
+        if (null!=settings ) {
+            if (null!=settings.getLocale() && settings.getLocale().length()>0)
+                Common.SetLocale(this.getBaseContext(), null, settings.getLocale() , false);
+            else
+                Common.SetLocale(this.getBaseContext(), null, "English", false);
+        } else
+            Common.SetLocale(this.getBaseContext(), null, "English", false);
     }
 }

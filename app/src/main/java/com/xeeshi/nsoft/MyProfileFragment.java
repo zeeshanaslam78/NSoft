@@ -110,7 +110,12 @@ public class MyProfileFragment extends Fragment implements DatePickerFragment.Ge
 
         GetDataLocallyAndUpdateUI();
 
-        GetDataFromServerAndUpdateUI();
+        if (Common.isNetworkAvailable(getActivity())) {
+            GetDataFromServerAndUpdateUI();
+        } else {
+            Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.network_not_available), Toast.LENGTH_LONG).show();
+        }
+
 
 
 
@@ -130,7 +135,11 @@ public class MyProfileFragment extends Fragment implements DatePickerFragment.Ge
         action_send_user_data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SendDataToServerAfterValidationAndSaveLocally();
+                if (Common.isNetworkAvailable(getActivity())) {
+                    SendDataToServerAfterValidationAndSaveLocally();
+                } else {
+                    Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.network_not_available), Toast.LENGTH_LONG).show();
+                }
             }
         });
     }

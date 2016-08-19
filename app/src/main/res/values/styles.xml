@@ -6,6 +6,10 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="ToolbarTitle" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">20sp</item>
+    </style>
+
 
     <style name="AppTheme.Blue" parent="AppTheme">
         <item name="colorPrimary">@color/colorPrimaryBlue</item>
@@ -105,5 +109,47 @@
     <attr name="icCloudUpload" format="reference" />
     <attr name="colorDesctiption" format="color" />
     <attr name="drawerItemBgSelector" format="reference" />
+
+
+    <declare-styleable name="FontSize">
+        <attr name="font_small" format="dimension" />
+        <attr name="font_medium" format="dimension" />
+        <attr name="font_large" format="dimension" />
+        <attr name="font_xlarge" format="dimension" />
+    </declare-styleable>
+
+
+    <style name="FontSize" >
+    </style>
+
+
+    <style name="FontSize.Small">
+        <item name="font_small">12sp</item>
+        <item name="font_medium">16sp</item>
+        <item name="font_large">20sp</item>
+        <item name="font_xlarge">24sp</item>
+
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="FontSize.Medium">
+        <item name="font_small">14sp</item>
+        <item name="font_medium">18sp</item>
+        <item name="font_large">22sp</item>
+        <item name="font_xlarge">26sp</item>
+
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="FontSize.Large">
+        <item name="font_small">16sp</item>
+        <item name="font_medium">20sp</item>
+        <item name="font_large">24sp</item>
+        <item name="font_xlarge">28sp</item>
+
+        <item name="android:textSize">18sp</item>
+    </style>
+
+
 
 </resources>

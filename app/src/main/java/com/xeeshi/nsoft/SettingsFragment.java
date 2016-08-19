@@ -1,9 +1,7 @@
 package com.xeeshi.nsoft;
 
 import android.app.Fragment;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.content.IntentCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +27,7 @@ public class SettingsFragment extends Fragment {
 
     private String language = "English";
     private String theme = "Blue";
+    private String fontSize = "Medium";
 
     public SettingsFragment() {
         // Required empty public constructor
@@ -66,8 +65,9 @@ public class SettingsFragment extends Fragment {
         TextView fs_txt_save_settings = (TextView) getActivity().findViewById(R.id.fs_txt_save_settings);
         Spinner fs_spinner_language = (Spinner) getActivity().findViewById(R.id.fs_spinner_language);
 
-        final View fs_view_blue = getActivity().findViewById(R.id.fs_view_blue);
-        final View fs_view_purple = getActivity().findViewById(R.id.fs_view_purple);
+        Spinner fs_spinner_theme = (Spinner) getActivity().findViewById(R.id.fs_spinner_theme);
+        Spinner fs_spinner_font_size = (Spinner) getActivity().findViewById(R.id.fs_spinner_font_size);
+
 
         List<String> languageList = new ArrayList<>();
         languageList.add("English");
@@ -88,59 +88,81 @@ public class SettingsFragment extends Fragment {
             }
         });
 
-        fs_view_blue.setOnClickListener(new View.OnClickListener() {
+
+
+
+        List<String> themeList = new ArrayList<>();
+        themeList.add("Blue");
+        themeList.add("Purple");
+
+        ArrayAdapter<String> themeAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, themeList);
+        fs_spinner_theme.setAdapter(themeAdapter);
+
+        fs_spinner_theme.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onClick(View view) {
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+                theme = (String) adapterView.getItemAtPosition(position);
+            }
 
-                Settings settings = Settings.getSingleItem();
-                Settings.deleteAllRecords();
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
 
-                Settings settings1 = new Settings();
-                settings1.setLocale(settings.getLocale());
-                settings1.setTheme("Blue");
-                settings1.save();
-
-
-                getActivity().finish();
-                final Intent intent = getActivity().getIntent();
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
-                getActivity().startActivity(intent);
-
-                /*fs_view_blue.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-
-                    }
-                }, 1000);*/
             }
         });
 
-        fs_view_purple.setOnClickListener(new View.OnClickListener() {
+
+
+
+        List<String> fontSizeList = new ArrayList<>();
+        fontSizeList.add("Small");
+        fontSizeList.add("Medium");
+        fontSizeList.add("Large");
+
+        ArrayAdapter<String> fontSizeAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, fontSizeList);
+        fs_spinner_font_size.setAdapter(fontSizeAdapter);
+
+        fs_spinner_font_size.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onClick(View view) {
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+                fontSize = (String) adapterView.getItemAtPosition(position);
+            }
 
-                Settings settings = Settings.getSingleItem();
-                Settings.deleteAllRecords();
-
-                Settings settings1 = new Settings();
-                settings1.setLocale(settings.getLocale());
-                settings1.setTheme("Purple");
-                settings1.save();
-
-                getActivity().finish();
-                final Intent intent = getActivity().getIntent();
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
-                getActivity().startActivity(intent);
-
-                /*fs_view_purple.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-
-                    }
-                }, 1000);*/
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
         });
+
+
+        Settings settings = Settings.getSingleItem();
+        if (null!=settings) {
+            if (null!=settings.getLocale() & settings.getLocale().length()>0)
+                language = settings.getLocale();
+
+            if (null!=settings.getTheme() & settings.getTheme().length()>0)
+                theme = settings.getTheme();
+
+            if (null!=settings.getFontSize() & settings.getFontSize().length()>0)
+                fontSize = settings.getFontSize();
+        }
+
+        if (language.equals("English"))
+            fs_spinner_language.setSelection(languageAdapter.getPosition("English"));
+        else if (language.equals("BHS"))
+            fs_spinner_language.setSelection(languageAdapter.getPosition("BHS"));
+
+        if (theme.equals("Blue"))
+            fs_spinner_theme.setSelection(themeAdapter.getPosition("Blue"));
+        else if (theme.equals("Purple"))
+            fs_spinner_theme.setSelection(themeAdapter.getPosition("Purple"));
+
+
+        if (fontSize.equals("Small"))
+            fs_spinner_font_size.setSelection(fontSizeAdapter.getPosition("Small"));
+        else if (fontSize.equals("Medium"))
+            fs_spinner_font_size.setSelection(fontSizeAdapter.getPosition("Medium"));
+        else if (fontSize.equals("Large"))
+            fs_spinner_font_size.setSelection(fontSizeAdapter.getPosition("Large"));
 
 
 
@@ -148,20 +170,22 @@ public class SettingsFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Settings settings1 = Settings.getSingleItem();
                 Settings.deleteAllRecords();
+
                 Settings settings = new Settings();
-                settings.setTheme(settings1.getTheme());
+                settings.setTheme(theme);
+                settings.setFontSize(fontSize);
+
                 if (language.equals("BHS")) {
-                    settings.setLocale("bs");
+                    settings.setLocale("BHS");
                     settings.save();
 
-                    Common.SetLocale(getActivity().getBaseContext(), getActivity(), "bs", true);
+                    Common.SetLocale(getActivity().getBaseContext(), getActivity(), "BHS", true);
                 } else if (language.equals("English")) {
-                    settings.setLocale("en");
+                    settings.setLocale("English");
                     settings.save();
 
-                    Common.SetLocale(getActivity().getBaseContext(), getActivity(), "en", true);
+                    Common.SetLocale(getActivity().getBaseContext(), getActivity(), "English", true);
                 }
 
             }

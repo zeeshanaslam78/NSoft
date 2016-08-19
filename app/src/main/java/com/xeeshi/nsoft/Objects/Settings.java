@@ -20,6 +20,9 @@ public class Settings extends Model {
     @Column(name = "theme")
     private String theme;
 
+    @Column(name = "font_size")
+    private String fontSize;
+
     public String getLocale() {
         return locale;
     }
@@ -34,6 +37,14 @@ public class Settings extends Model {
 
     public void setTheme(String theme) {
         this.theme = theme;
+    }
+
+    public String getFontSize() {
+        return fontSize;
+    }
+
+    public void setFontSize(String fontSize) {
+        this.fontSize = fontSize;
     }
 
     public static Settings getSingleItem() {
@@ -53,7 +64,7 @@ public class Settings extends Model {
         return "Settings{" +
                 "locale='" + locale + '\'' +
                 ", theme='" + theme + '\'' +
+                ", fontSize='" + fontSize + '\'' +
                 '}';
     }
-
 }

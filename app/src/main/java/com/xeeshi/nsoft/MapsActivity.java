@@ -1,6 +1,7 @@
 package com.xeeshi.nsoft;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -12,6 +13,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.xeeshi.nsoft.Objects.Settings;
 import com.xeeshi.nsoft.Objects.User;
 import com.xeeshi.nsoft.Utils.Common;
 import com.xeeshi.nsoft.Utils.Constants;
@@ -85,4 +87,20 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.addMarker(new MarkerOptions().position(location).title(name));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
     }
+
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        Settings settings = Settings.getSingleItem();
+        if (null!=settings ) {
+            if (null!=settings.getLocale() && settings.getLocale().length()>0)
+                Common.SetLocale(MapsActivity.this, null, settings.getLocale() , false);
+            else
+                Common.SetLocale(MapsActivity.this, null, "English", false);
+        } else
+            Common.SetLocale(MapsActivity.this, null, "English", false);
+    }
+
 }

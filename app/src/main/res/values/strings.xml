@@ -30,6 +30,9 @@
     <string name="removed_from_favorite">Removed from Favorite</string>
     <string name="added_to_favorite">Added to Favorite</string>
     <string name="already_added_to_favorite">Already Added to Favorite</string>
-    <string name="choose_theme">Choose theme</string>
 
+    <string name="choose_theme">Choose theme</string>
+    <string name="choose_font_size">Choose font size</string>
+
+    <string name="network_not_available">Network is unavailable</string>
 </resources>
